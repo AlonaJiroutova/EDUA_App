@@ -1,0 +1,880 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&family=Rubik:wght@300;400&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  position: relative;
+}
+.main {
+  display: block;
+  width: 100%;
+  min-height: 150vh;
+  max-height: max-content;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)),
+    url(images/close-up-view-back-school-concept.jpg);
+  background-size: cover;
+  background-position: center;
+  font-family: "Rubik Doodle Shadow", system-ui;
+  font-size: 5.8rem;
+  color: #fff;
+}
+.heading-primary {
+  font-size: 6rem;
+  color: #ffffff;
+  padding: 5rem 0;
+  text-align: center;
+  letter-spacing: 0.8rem;
+}
+.top-container,
+.bottom-container {
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.top-container {
+  margin: 2rem auto;
+}
+.bottom-container {
+  margin: 10rem auto 0 auto;
+  padding-bottom: 15rem;
+  align-items: flex-start;
+}
+
+/* digital clock */
+
+.digital-clock {
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 7rem;
+}
+.clock {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+#hours,
+#minutes {
+  width: 49%;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+#hours,
+#minutes,
+.day-date {
+  background: rgba(173, 173, 173, 0.5);
+  backdrop-filter: blur(0.5rem);
+  border-radius: 2rem;
+  box-shadow: 1.2rem 1.2rem 2rem rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.day-date {
+  text-align: center;
+  width: 100%;
+  font-family: "Rubik", sans-serif;
+  font-size: 2.4rem;
+}
+.day-date p {
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 0.2rem;
+}
+#day {
+  padding: 2rem 0 1rem 0;
+}
+#date {
+  padding-bottom: 2rem;
+}
+
+.to-do-list-icon,
+.notes-icon,
+.calculator-icon,
+.memory-game-icon {
+  width: 15%;
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.to-do-list-icon,
+.notes-icon,
+.calculator-icon {
+  margin-right: 2rem;
+}
+.app-name {
+  width: max-content;
+  margin-top: 2rem;
+  font-family: "Rubik", sans-serif;
+  font-size: 2.8rem;
+  color: #b9ffea;
+  text-shadow: 1rem 1rem 2rem rgba(0, 0, 0, 0.5);
+}
+.memory-game-app-name {
+  margin-top: 0.75rem;
+}
+.memory-game-app-name a {
+  color: inherit;
+  text-align: center;
+  text-decoration: none;
+}
+.to-do-list-icon:hover,
+.notes-icon:hover,
+.calculator-icon:hover,
+.memory-game-icon:hover {
+  transform: scale(1.1);
+}
+.to-do-list-icon:active,
+.notes-icon:active,
+.calculator-icon:active,
+.memory-game-icon:active {
+  transform: scale(1);
+}
+.to-do-list-icon img,
+.notes-icon img,
+.calculator-icon img,
+.memory-game-icon img {
+  width: 100%;
+  height: 100%;
+}
+
+.close-icon {
+  position: absolute;
+  top: 3rem;
+  right: 3rem;
+  width: 4rem;
+  height: 3rem;
+  cursor: pointer;
+}
+.close-icon img {
+  width: 80%;
+}
+.close-icon:hover {
+  transform: scale(1.1);
+}
+.close-icon:active {
+  transform: scale(1);
+}
+
+/* weather app */
+
+.weather-app-container {
+  width: 55%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.weather-app {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(173, 173, 173, 0.5);
+  backdrop-filter: blur(0.2rem);
+  border-radius: 2rem;
+  font-family: "Rubik", sans-serif;
+  box-shadow: 1.2rem 1.2rem 2rem rgba(0, 0, 0, 0.4);
+}
+#error-message {
+  font-size: 2rem;
+  text-align: center;
+  margin-top: 1rem;
+  padding: 1rem 0 4rem 0;
+  display: none;
+}
+#weather-info {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 1rem auto;
+}
+#weather-message {
+  margin: 2rem 5rem;
+  font-size: 2.6rem;
+  text-align: center;
+  letter-spacing: 0.2rem;
+  line-height: 5rem;
+}
+#city-name {
+  text-align: center;
+  font-size: 2.8rem;
+  margin: 0;
+}
+.display-weather-app {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 5rem;
+  margin: 2.5rem auto 2rem auto;
+  position: relative;
+}
+.display-weather-app input {
+  width: 100%;
+  height: 5rem;
+  background: #fef9ad;
+  border: none;
+  outline: none;
+  border-radius: 1rem;
+  color: #1c5c49;
+  font-size: 1.8rem;
+  padding-left: 2rem;
+}
+.display-weather-app button {
+  width: 30%;
+  height: 5rem;
+  position: absolute;
+  right: 0;
+  border: none;
+  outline: none;
+  border-radius: 1rem;
+  background: #1c5c49;
+  color: #fef9ad;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+.display-weather-app button:hover {
+  background: #337762;
+}
+.display-weather-app button:active {
+  transform: scale(0.95);
+}
+.left-side,
+.right-side {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.left-side {
+  margin-right: 2rem;
+}
+.weather-icon-temperature {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+  font-size: 2.8rem;
+  font-weight: bold;
+}
+
+.weather-icon-container {
+  margin-right: 1rem;
+}
+.weather-icon-container img {
+  max-width: 6rem;
+}
+.max-min-temp-info {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1.5rem 0;
+  text-align: center;
+}
+#weather-description,
+#min-temp,
+#max-temp {
+  font-size: 2rem;
+}
+#min-temp {
+  margin-right: 2rem;
+}
+
+.humidity-and-wind-info,
+.sunset-sunrise-info {
+  width: 100%;
+  margin-bottom: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 2rem;
+  text-align: center;
+}
+.sunrise p,
+.sunset p {
+  margin-bottom: 1rem;
+}
+.humidity-info,
+.wind-info {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.humidity-info img,
+.wind-info img {
+  width: 30%;
+}
+
+/* to-do list */
+
+.to-do-list-container,
+.calculator-container {
+  width: 100%;
+  min-height: 120vh;
+  max-height: fit-content;
+  padding: 12rem 0;
+  position: relative;
+  display: none;
+  justify-content: center;
+  align-items: flex-start;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)),
+    url(images/close-up-view-back-school-concept.jpg);
+  background-size: cover;
+  background-position: top;
+  font-family: "Rubik", sans-serif;
+}
+.to-do-list {
+  width: 35%;
+  min-height: 65vh;
+  background: url(images/pattern_straight-lines_1.png);
+  border-radius: 2rem;
+  box-shadow: 1.2rem 1.2rem 2rem rgba(0, 0, 0, 0.5);
+}
+.heading-container {
+  width: 80%;
+  margin: 3rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.heading-to-do-list {
+  font-size: 3.2rem;
+  font-weight: bold;
+  color: #0b3e2f;
+  margin-right: 3rem;
+}
+.heading-container img {
+  width: 4rem;
+}
+.input-text-section {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 3rem auto;
+  position: relative;
+}
+.input-text-section input {
+  width: 100%;
+  height: 5rem;
+  background: #84c5b2;
+  color: #063225;
+  font-size: 2.2rem;
+  border-radius: 2rem;
+  padding: 0 1.8rem;
+  border: none;
+  outline: none;
+}
+.input-text-section input::placeholder {
+  color: #2e695e;
+}
+.input-text-section button {
+  width: 20%;
+  height: 5rem;
+  border: none;
+  background: #0b3e2f;
+  color: #fffef8;
+  font-size: 2.2rem;
+  border-radius: 2rem;
+  position: absolute;
+  right: 0;
+  cursor: pointer;
+}
+.input-text-section button:hover {
+  background-color: #1c5c49;
+}
+.input-text-section button:active {
+  transform: scale(0.95);
+}
+.list-section {
+  width: 75%;
+  margin: 3.8rem auto;
+  box-sizing: border-box;
+}
+.list-section ul li {
+  width: 100%;
+  display: block;
+  overflow-wrap: break-word;
+  list-style: none;
+  color: #063225;
+  margin-bottom: 2rem;
+  padding: 0 4rem;
+  font-size: 2.4rem;
+  position: relative;
+  cursor: pointer;
+}
+
+.list-section ul li::before {
+  content: "";
+  width: 2rem;
+  height: 2rem;
+  position: absolute;
+  top: 0.1rem;
+  left: 0;
+  border-radius: 50%;
+  border: solid 0.3rem #0b3e2f;
+}
+.list-section ul li span {
+  width: 2rem;
+  height: 2rem;
+  position: absolute;
+  top: 0.1rem;
+  right: 0;
+  background: url(images/to-do-list/cross.png);
+  background-size: contain;
+  background-position: center;
+  border-radius: 50%;
+}
+.list-section ul li span:hover {
+  transform: scale(1.2);
+}
+.list-section ul li span:active {
+  transform: scale(0.95);
+}
+
+ul li.checked {
+  text-decoration: line-through;
+}
+
+ul li.checked::before {
+  background: url(images/to-do-list/checked-new.png);
+  background-position: center;
+  background-size: cover;
+}
+
+/* calculator */
+
+.calculator {
+  border: solid #000000 0.3rem;
+  font-size: 3.8rem;
+  font-weight: bold;
+  border-radius: 2rem;
+  background: rgb(43, 158, 114);
+  display: grid;
+  grid-template-columns: repeat(4, 6rem);
+  gap: 1rem;
+  padding: 2rem;
+  box-shadow: 2rem 2rem 3rem rgba(18, 78, 55, 0.8);
+}
+.calculator input {
+  font-size: 3.8rem;
+  color: #ffffff;
+  grid-column: span 4;
+  height: 6rem;
+  background: transparent;
+  border: none;
+  outline: none;
+}
+.calculator input::placeholder {
+  color: #eedaee;
+}
+.calculator button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 6rem;
+  height: 6rem;
+  font-size: 1.8rem;
+  font-weight: bold;
+  background-color: #fff8b4;
+  border-radius: 50%;
+  border: solid #000 0.3rem;
+  box-shadow: 0.2rem 0.2rem 1rem rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+.calculator button:hover {
+  background: #e7bcf3;
+}
+.calculator button:active {
+  transform: scale(0.95);
+}
+
+.calculator button img {
+  width: 3rem;
+  height: 3rem;
+}
+
+#equal-btn {
+  grid-column: span 4;
+  width: 100%;
+  border-radius: 2rem;
+}
+
+/* note app */
+
+.note-app-container {
+  width: 100%;
+  min-height: 120vh;
+  max-height: fit-content;
+  padding-bottom: 10rem;
+  position: relative;
+  display: none;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)),
+    url(images/close-up-view-back-school-concept.jpg);
+  background-size: cover;
+  background-position: top;
+}
+
+.notes-heading,
+.note-p {
+  text-align: center;
+  color: #fff;
+}
+.notes-heading {
+  font-size: 5.2rem;
+  padding: 6rem 0 2rem 0;
+  font-family: "Rubik Doodle Shadow", system-ui;
+  letter-spacing: 0.5rem;
+}
+.note-p {
+  font-size: 1.8rem;
+  font-family: "Rubik", sans-serif;
+  margin-bottom: 3rem;
+}
+.note-app-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Rubik", sans-serif;
+}
+.note-app {
+  width: max-content;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0 8rem;
+}
+.note-item,
+.add-new-note-item {
+  width: 35rem;
+  height: 25rem;
+  margin: 3rem 4rem;
+  border-radius: 2rem;
+  background-color: rgba(203, 203, 203, 0.5);
+  backdrop-filter: blur(0.2rem);
+  box-shadow: 1.2rem 1.2rem 2rem rgba(17, 54, 53, 0.5);
+  position: relative;
+}
+.add-new-note-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.add-new-note-item img {
+  width: 10rem;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+.add-new-note-item img:hover {
+  transform: scale(1.1);
+}
+.add-new-note-item img:active {
+  transform: scale(0.95);
+}
+.note-item {
+  font-size: 2rem;
+  padding: 3rem;
+  resize: none;
+  outline-style: none;
+}
+.note-item::placeholder {
+  color: #0b3e2f;
+}
+
+.note-item::-webkit-scrollbar {
+  width: 0.5vw;
+  height: 0.5rem;
+}
+.note-item::-webkit-scrollbar-thumb {
+  background-color: #1b5449;
+  border-radius: 2rem;
+  height: 1rem;
+}
+.note-item::-webkit-scrollbar-track {
+  background-color: transparent;
+  margin-block: 1.2rem;
+}
+
+.delete-icon {
+  width: 3rem;
+  height: 3rem;
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  transition: all 0.2s;
+}
+.delete-icon:hover {
+  transform: scale(1.2);
+}
+
+footer {
+  width: 100%;
+  height: fit-content;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 0;
+  margin-top: 5rem;
+  font-size: 1.8rem;
+  color: rgba(234, 234, 234, 0.8);
+}
+
+/* media  */
+
+@media (max-width: 75em) {
+  html {
+    font-size: 56.25%;
+  }
+  .main {
+    min-height: 130vh;
+  }
+  .heading-primary {
+    font-size: 5rem;
+  }
+
+  .digital-clock {
+    font-size: 6rem;
+  }
+  .day-date {
+    font-size: 2.2rem;
+  }
+  .app-name {
+    font-size: 2.6rem;
+  }
+  #weather-message {
+    font-size: 2.2rem;
+    margin: 2rem 4rem;
+  }
+  .to-do-list {
+    width: 45%;
+  }
+  .top-container {
+    width: 75%;
+  }
+}
+@media (max-width: 59.38em) {
+  html {
+    font-size: 50%;
+  }
+  .main {
+    min-height: 120vh;
+  }
+  .heading-primary {
+    font-size: 4.8rem;
+  }
+  .digital-clock {
+    font-size: 5rem;
+  }
+  .app-name {
+    font-size: 2.4rem;
+  }
+  .to-do-list {
+    width: 50%;
+  }
+  .top-container {
+    width: 85%;
+    margin-bottom: 8rem;
+  }
+}
+@media (max-width: 48em) {
+  .main {
+    min-height: 180vh;
+  }
+  .heading-primary {
+    width: 70%;
+    margin: 0 auto;
+    font-size: 4.5rem;
+    padding: 4rem;
+  }
+  .top-container {
+    flex-direction: column;
+  }
+  .bottom-container {
+    width: 60%;
+    display: grid;
+    grid-template-columns: repeat(2, 45%);
+    gap: 5rem;
+  }
+  .digital-clock {
+    width: 60%;
+    margin-bottom: 5rem;
+    font-size: 7rem;
+  }
+  .weather-app-container {
+    width: 70%;
+  }
+  .to-do-list-icon,
+  .notes-icon,
+  .calculator-icon,
+  .memory-game-icon {
+    width: 60%;
+    margin: 0 auto;
+  }
+  .notes-icon {
+    transform: translateX(1.2rem);
+  }
+  .app-name {
+    font-size: 2.2rem;
+  }
+  #weather-message {
+    font-size: 2.4rem;
+    margin: 2rem 4rem;
+    line-height: 4rem;
+  }
+  .to-do-list {
+    width: 60%;
+  }
+  .heading-to-do-list {
+    font-size: 3rem;
+    margin-right: 2rem;
+  }
+  .to-do-list-container,
+  .calculator-container {
+    padding: 18rem 0;
+  }
+}
+
+@media (max-width: 40.63em) {
+  .heading-primary {
+    width: 80%;
+    font-size: 4rem;
+  }
+  .digital-clock {
+    width: 80%;
+
+    font-size: 6rem;
+  }
+  .weather-app-container {
+    width: 85%;
+  }
+
+  .to-do-list {
+    width: 70%;
+  }
+  .heading-to-do-list {
+    font-size: 2.8rem;
+  }
+  .notes-heading {
+    padding: 10rem 0 2rem 0;
+  }
+}
+
+@media (max-width: 26.25em) {
+  .main {
+    min-height: 250vh;
+  }
+  .heading-primary {
+    width: 90%;
+    font-size: 3.6rem;
+    padding: 4rem 3rem;
+  }
+  .digital-clock {
+    width: 90%;
+    font-size: 6rem;
+  }
+  .weather-app-container {
+    width: 95%;
+  }
+  .top-container {
+    width: 85%;
+    margin-bottom: 8rem;
+  }
+  .bottom-container {
+    width: 60%;
+    display: grid;
+    grid-template-columns: repeat(1, 100%);
+    gap: 6rem;
+    margin: 0 auto;
+  }
+  .notes-icon {
+    transform: translateX(1.5rem);
+  }
+  .app-name {
+    font-size: 2.4rem;
+  }
+  #weather-message {
+    font-size: 2rem;
+    margin: 2rem 3rem;
+    line-height: 3.2rem;
+  }
+
+  .display-weather-app input {
+    font-size: 1.6rem;
+    font-weight: 600;
+    height: 4rem;
+    padding-left: 1rem;
+  }
+  .display-weather-app button {
+    font-size: 1.4rem;
+    height: 4rem;
+  }
+  #weather-info {
+    flex-direction: column;
+    width: 100%;
+  }
+  .left-side {
+    margin-bottom: 1rem;
+  }
+  .left-side,
+  .right-side {
+    width: 80%;
+  }
+  .humidity-info img,
+  .wind-info img {
+    width: 25%;
+  }
+  .to-do-list {
+    width: 80%;
+  }
+  .heading-to-do-list {
+    font-size: 2.4rem;
+  }
+  .heading-container img {
+    width: 3.5rem;
+  }
+  .input-text-section input {
+    font-size: 1.8rem;
+    height: 4rem;
+  }
+
+  .input-text-section button {
+    font-size: 1.8rem;
+    height: 4rem;
+  }
+  .notes-heading {
+    font-size: 4.5rem;
+    padding: 12rem 0 2rem 0;
+  }
+  .note-item,
+  .add-new-note-item {
+    width: 32rem;
+    height: 22rem;
+  }
+  .add-new-note-item img {
+    width: 8rem;
+  }
+}

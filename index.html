@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EDC App</title>
+    <link rel="icon" type="image/x-icon" href="images/apps.png">
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="main">
+        <h1 class="heading-primary">Your Every Day Use App</h1>
+        <div class="top-container">
+            <div class="digital-clock">
+                <div class="clock">
+                    <p id="hours"></p>
+                    <p id="minutes"></p>
+                </div>
+                <div class="day-date">
+                    <p id="day"></p>
+                    <p id="date"></p>
+                </div>
+            </div>
+            <div class="weather-app-container">
+                <div class="weather-app">
+                    <div class="display-weather-app">
+                        <input id="weather-app-input" type="text" placeholder="Write city name" />
+                        <button id="weather-app-btn">Search</button>
+                    </div>
+                    <h3 id="weather-message">
+                        Find out the weather in your city today! <br />💜
+                    </h3>
+                    <p id="error-message">Invalid city name</p>
+                    <div id="weather-info">
+                        <div class="left-side">
+                            <h3 id="city-name"></h3>
+                            <div class="weather-icon-temperature">
+                                <div class="weather-icon-container">
+                                    <img src="images/weather-app/cloudy-day.png" alt="weather-icon" />
+                                </div>
+                                <div class="weather-temperature"></div>
+                            </div>
+                            <p id="weather-description"></p>
+                            <div class="max-min-temp-info">
+                                <p id="min-temp"></p>
+                                <p id="max-temp"></p>
+                            </div>
+                        </div>
+                        <div class="right-side">
+                            <div class="humidity-and-wind-info">
+                                <div class="wind-info">
+                                    <img src="images/weather-app/wind.png" alt="wind-icon" />
+                                    <p id="wind-value"></p>
+                                </div>
+                                <div class="humidity-info">
+                                    <img src="images/weather-app/humidity.png" alt="humidity-icon" />
+                                    <p id="humidity-value"></p>
+                                </div>
+                            </div>
+                            <div class="sunset-sunrise-info">
+                                <div class="sunrise">
+                                    <p>Sunrise:</p>
+                                    <p id="sunrise-time"></p>
+                                </div>
+                                <div class="sunset">
+                                    <p>Sunset:</p>
+                                    <p id="sunset-time"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bottom-container">
+            <div id="to-do-list-open-btn" class="to-do-list-icon">
+                <img src="./images/to-do-list-icon.png" alt="to-do-list-icon" />
+                <p class="app-name">to-do list</p>
+            </div>
+            <div id="note-app-open-btn" class="notes-icon">
+                <img src="./images/notes_icon.png" alt="notes-icon" />
+                <p class="app-name">notes</p>
+            </div>
+            <div id="calculator-open-btn" class="calculator-icon">
+                <img src="./images/calculator_icon.png" alt="calculator-icon" />
+                <p class="app-name">calculator</p>
+            </div>
+            <div class="memory-game-icon">
+                <a href="https://alonajiroutova.github.io/memory_game_react/" target="_blank"><img
+                        src="images/memory-game-icon.png" alt="memory-game-icon" /></a>
+                <p class="app-name memory-game-app-name"><a href="https://alonajiroutova.github.io/memory_game_react/"
+                        target="_blank">memory game</a> </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="to-do-list-container">
+        <div id="to-do-close-icon" class="close-icon">
+            <img src="images/close-icon-light-green.png" alt="close-icon" />
+        </div>
+        <div class="to-do-list">
+            <div class="heading-container">
+                <h3 class="heading-to-do-list">Your To-do List</h3>
+                <img src="images/to-do-list/checklist.png" alt="checklist-icon" />
+            </div>
+            <div class="input-text-section">
+                <input id="to-do-input" type="text" placeholder="Write your task here..." spellcheck="false" />
+                <button id="to-do-btn">Add</button>
+            </div>
+            <div class="list-section">
+                <ul id="to-do-list-items">
+                    <!-- <li class="checked">First task</li>
+                    <li>First task</li>
+                    <li>First task</li> -->
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="calculator-container">
+        <div id="calc-close-icon" class="close-icon">
+            <img src="images/close-icon-light-green.png" alt="close-icon" />
+        </div>
+        <div class="calculator">
+            <input type="text" readonly name="display" id="calculator-display" placeholder="0" maxlength="10" />
+            <button value="AC" onclick="clearDisplay()">AC</button>
+            <button value="DEL" onclick="deleteNumber()">DEL</button>
+            <button value="%" onclick="display('%')">
+                <img src="images/calculator/percent.png" alt="math-icon" />
+            </button>
+            <button value="/" onclick="display('/')">
+                <img src="images/calculator/division.png" alt="math-icon" />
+            </button>
+            <button value="7" onclick="display('7')">
+                <img src="images/calculator/number-7.png" alt="math-icon" />
+            </button>
+            <button value="8" onclick="display('8')">
+                <img src="images/calculator/number-8.png" alt="math-icon" />
+            </button>
+            <button value="9" onclick="display('9')">
+                <img src="images/calculator/number-9.png" alt="math-icon" />
+            </button>
+            <button value="*" onclick="display('*')">
+                <img src="images/calculator/cross.png" alt="math-icon" />
+            </button>
+            <button value="4" onclick="display('4')">
+                <img src="images/calculator/number-4.png" alt="math-icon" />
+            </button>
+            <button value="5" onclick="display('5')">
+                <img src="images/calculator/number-5.png" alt="math-icon" />
+            </button>
+            <button value="6" onclick="display('6')">
+                <img src="images/calculator/number-6.png" alt="math-icon" />
+            </button>
+            <button value="+" onclick="display('+')">
+                <img src="images/calculator/plus.png" alt="math-icon" />
+            </button>
+            <button value="1" onclick="display('1')">
+                <img src="images/calculator/number-1.png" alt="math-icon" />
+            </button>
+            <button value="2" onclick="display('2')">
+                <img src="images/calculator/number-2.png" alt="math-icon" />
+            </button>
+            <button value="3" onclick="display('3')">
+                <img src="images/calculator/number-3.png" alt="math-icon" />
+            </button>
+            <button value="-" onclick="display('-')">
+                <img src="images/calculator/minus.png" alt="math-icon" />
+            </button>
+            <button value="0" onclick="display('0')">
+                <img src="images/calculator/number_0.png" alt="math-icon" />
+            </button>
+            <button value="." onclick="display('.')">.</button>
+            <button value="√ " onclick="squareRoot ()">
+                <img src="images/calculator/sign.png" alt="math-icon" />
+            </button>
+            <button value="x2 " onclick="square ()">
+                <img src="images/calculator/x2.png" alt="math-icon" />
+            </button>
+
+            <button value="=" onclick="calculate()" id="equal-btn">
+                <img src="images/calculator/equal.png" alt="math-icon" />
+            </button>
+        </div>
+    </div>
+    <div class="note-app-container">
+        <div id="note-app-close-icon" class="close-icon">
+            <img src="images/close-icon-light-green.png" alt="math-icon" />
+        </div>
+        <h2 class="notes-heading">Your notes</h2>
+        <p class="note-p">*double-click to delete the note</p>
+        <div class="note-app-wrap">
+
+            <div class="note-app" id="note-app">
+                <div class="add-new-note-item">
+                    <img class="add-new-note" src="images/add_icon.png" alt="add-icon" />
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p class="copyright-text"></p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
